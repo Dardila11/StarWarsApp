@@ -1,13 +1,18 @@
+export type LocalStarWarsData = {
+  name: string
+  image: string
+}
+
 // People
 
 export type PeopleResponse = {
   count: number
   next: string | null
   previous: string | null
-  results: People[]
+  results: Character[]
 }
 
-export type People = {
+export type Character = {
   name: string
   height: string
   mass: string

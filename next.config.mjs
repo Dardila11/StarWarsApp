@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    domains: ["static.wikia.nocookie.net", "starwars-visualguide.com"],
+  },
+}
 
-export default nextConfig;
+export default nextConfig

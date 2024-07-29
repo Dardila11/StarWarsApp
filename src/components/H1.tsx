@@ -5,5 +5,7 @@ type H1Props = {
 }
 
 export default function H1({ children }: H1Props) {
-  return <h1 className="text-4xl font-bold ">{children}</h1>
+  return (
+    <h1 className="text-4xl lg:text-6xl font-bold text-center">{children}</h1>
+  )
 }

@@ -1,7 +1,11 @@
 "use client"
 import { useState } from "react"
 
-export default function SearchForm() {
+type SearchFormProps = {
+  title: string
+}
+
+export default function SearchForm({ title }: SearchFormProps) {
   const [searchText, setSearchText] = useState("")
 
   const handleChange = (event: React.FormEvent<HTMLFormElement>) => {
@@ -19,7 +23,7 @@ export default function SearchForm() {
         type="text"
         onChange={(e) => setSearchText(e.target.value)}
         value={searchText}
-        placeholder="Search for a star wars character"
+        placeholder={`Search for a star wars ${title}`}
         spellCheck={false}
       />
     </form>

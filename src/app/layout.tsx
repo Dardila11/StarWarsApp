@@ -17,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-gray-900 `}>
+      <body
+        className={`${inter.className} bg-gray-900 text-white overflow-y-scroll`}
+      >
         <div className="flex flex-col mx-auto bg-white/[1%] max-w-6xl min-h-screen ">
           {children}
           <Footer />

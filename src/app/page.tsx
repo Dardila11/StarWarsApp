@@ -7,7 +7,7 @@ export default function Home() {
       <H1>Star Wars Database App</H1>
       <p className="mt-5 mb-10 text-xl">
         Find all about your{" "}
-        <span className="font-bold">favorite universe!</span>
+        <span className="font-bold italic underline">favorite universe!</span>
       </p>
       <PrevList />
     </main>

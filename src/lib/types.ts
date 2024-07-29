@@ -1,6 +1,7 @@
-export type LocalStarWarsData = {
+export type PrevData = {
   name: string
   image: string
+  id: number | undefined
 }
 
 // People

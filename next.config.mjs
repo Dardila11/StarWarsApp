@@ -1,7 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["static.wikia.nocookie.net", "starwars-visualguide.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "static.wikia.nocookie.net",
+      },
+      {
+        protocol: "https",
+        hostname: "starwars-visualguide.com",
+      },
+    ],
   },
 }
 

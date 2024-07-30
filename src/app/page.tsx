@@ -1,5 +1,5 @@
 import H1 from "@/components/H1"
-import PrevList from "@/components/PrevList"
+import PreviewList from "@/components/PreviewList"
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
         Find all about your{" "}
         <span className="font-bold italic underline">favorite universe!</span>
       </p>
-      <PrevList />
+      <PreviewList />
     </main>
   )
 }

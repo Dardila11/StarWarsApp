@@ -1,25 +1,19 @@
-import H1 from "@/components/H1"
-import PrevCard from "@/components/PrevDataCard"
-import SearchForm from "@/components/SearchForm"
-import { PrevData } from "@/lib/types"
-
 type PageProps = {
   params: {
     slug: string
   }
-  list: PrevData[]
 }
 
 export default async function Page({ params }: PageProps) {
-  const slug = params.slug.toLowerCase()
+  // const slug = params.slug.toLowerCase()
 
-  const response = await fetch(`https://swapi.dev/api/${slug}/`)
-  const data = await response.json()
-  const list: PrevData[] = data.results
+  // const response = await fetch(`https://swapi.dev/api/${slug}/`)
+  // const data = await response.json()
+  // const list: PrevData[] = data.results
 
   return (
     <main className="flex flex-col items-center pt-28">
-      <section className="mb-8">
+      {/* <section className="mb-8">
         <H1>
           Find all about <span>{slug} in Star Wars</span>
         </H1>
@@ -36,7 +30,7 @@ export default async function Page({ params }: PageProps) {
             slug={slug}
           />
         ))}
-      </section>
+      </section> */}
     </main>
   )
 }

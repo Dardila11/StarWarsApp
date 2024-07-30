@@ -1,7 +1,7 @@
-export type PrevData = {
+export type Category = {
   name: string
   image: string
-  id: number | undefined
+  id: number
 }
 
 // People

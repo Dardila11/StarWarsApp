@@ -1,12 +1,11 @@
-import PrevdataCard from "./PrevDataCard"
-
 import localData from "../lib/localData.json"
+import PreviewCard from "./PreviewCard"
 
-export default function PrevList() {
+export default function PreviewList() {
   return (
     <div className="grid grid-cols-3 gap-10 justify-center">
       {localData.map((category) => (
-        <PrevdataCard key={category.name} data={category} isLocal={true} />
+        <PreviewCard key={category.id} category={category} />
       ))}
     </div>
   )

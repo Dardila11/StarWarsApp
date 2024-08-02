@@ -1,4 +1,4 @@
-import { getAllIdsFromArray, getFilmsById, getIdFromUrl } from "@/lib/utils"
+import { getAllIdsFromArray, getFilmById, getIdFromUrl } from "@/lib/utils"
 import Image from "next/image"
 
 type FilmsListProps = {
@@ -11,7 +11,7 @@ export default async function FilmsList({ films }: FilmsListProps) {
   // get starships by id
 
   let filmsList = await Promise.all(
-    films.map((filmUrl) => getFilmsById(getIdFromUrl(filmUrl)))
+    films.map((filmUrl) => getFilmById(getIdFromUrl(filmUrl)))
   ).then((films) => films.map((films) => films.title))
 
   const isEmpty = filmsList.length === 0

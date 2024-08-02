@@ -165,6 +165,7 @@ export type FilmsResponse = {
 
 export type Film = {
   title: string
+  name: Film["title"]
   episode_id: number
   opening_crawl: string
   director: string

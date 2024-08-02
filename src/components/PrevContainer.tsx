@@ -12,7 +12,7 @@ export default function PrevContainer({
   name,
 }: PrevContainerProps) {
   return (
-    <div className="flex flex-col border p-5 w-[250px] items-center">
+    <div className="flex flex-col  p-5 w-[250px] items-center">
       <h1>{title}</h1>
       <Image
         src={image == undefined ? "/images/NotFoundImageSVG.svg" : image}

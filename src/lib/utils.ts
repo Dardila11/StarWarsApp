@@ -60,8 +60,9 @@ export async function getVehicleById(id: string): Promise<Vehicle> {
   return vehicle
 }
 
-export async function getFilmsById(id: string): Promise<Film> {
+export async function getFilmById(id: string): Promise<Film> {
   const response = await fetch(`https://swapi.dev/api/films/${id}`)
   const film = await response.json()
+
   return film
 }

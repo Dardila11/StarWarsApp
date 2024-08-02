@@ -3,6 +3,14 @@ import List from "@/components/Lists/List"
 import SearchForm from "@/components/SearchForm"
 import { Character, PeopleResponse } from "@/lib/types"
 
+/**
+ * TODO
+ * Search Functionality
+ * Pagination
+ *
+ * @returns
+ */
+
 export default async function PeoplePage() {
   const response = await fetch(`https://swapi.dev/api/people`)
   const data: PeopleResponse = await response.json()
@@ -17,7 +25,7 @@ export default async function PeoplePage() {
           <SearchForm title={""} />
         </div>
       </section>
-      <List urlList={peopleUrl} category={"people"} />
+      <List urlList={peopleUrl} category={"people"} hasTitle={false} />
     </main>
   )
 }

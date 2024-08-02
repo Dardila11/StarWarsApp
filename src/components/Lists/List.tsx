@@ -13,9 +13,14 @@ import Image from "next/image"
 type ListProps = {
   urlList: string[]
   category: "films" | "species" | "starships" | "vehicles" | "people"
+  hasTitle?: boolean
 }
 
-export default async function List({ urlList, category }: ListProps) {
+export default async function List({
+  urlList,
+  category,
+  hasTitle = true,
+}: ListProps) {
   const ids = getAllIdsFromArray(urlList)
   // initialize object to store ids and names
   let list = await Promise.all(
@@ -39,7 +44,7 @@ export default async function List({ urlList, category }: ListProps) {
 
   return (
     <div className="flex flex-col flex-wrap  w-full items-center">
-      <h1>{category.toUpperCase()}</h1>
+      <h1>{hasTitle && category.toUpperCase()}</h1>
       {isEmpty ? (
         <p>No {category} found</p>
       ) : (

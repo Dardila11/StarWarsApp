@@ -1,6 +1,7 @@
 import { SWAPI_IMAGE_URL } from "@/lib/constants"
 import {
   getAllIdsFromArray,
+  getCharacterById,
   getFilmById,
   getIdFromUrl,
   getSpecieById,
@@ -11,7 +12,7 @@ import Image from "next/image"
 
 type ListProps = {
   urlList: string[]
-  category: "films" | "species" | "starships" | "vehicles"
+  category: "films" | "species" | "starships" | "vehicles" | "people"
 }
 
 export default async function List({ urlList, category }: ListProps) {
@@ -28,6 +29,8 @@ export default async function List({ urlList, category }: ListProps) {
           return getStarshipById(getIdFromUrl(url))
         case "vehicles":
           return getVehicleById(getIdFromUrl(url))
+        case "people":
+          return getCharacterById(getIdFromUrl(url))
       }
     })
   ).then((list) => list.map((item) => item.name))
@@ -59,10 +62,14 @@ function Card({
   id: string
   category: string
 }) {
+  let newCat = category
+  if (category === "people") {
+    newCat = "characters"
+  }
   return (
     <div className="flex flex-col p-5 w-[250px] items-center">
       <Image
-        src={`${SWAPI_IMAGE_URL}/${category}/${id}.jpg`}
+        src={`${SWAPI_IMAGE_URL}/${newCat}/${id}.jpg`}
         alt={name}
         width={200}
         height={200}

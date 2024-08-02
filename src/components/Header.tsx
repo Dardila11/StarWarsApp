@@ -8,7 +8,9 @@ const routes = [
 export default function Header() {
   return (
     <header className="flex items-center justify-between border-b border-white/10 h-14 px-4">
-      <h1>STAR WARS DATABASE</h1>
+      <Link href={routes[0].path}>
+        <h1>STAR WARS DATABASE</h1>
+      </Link>
       <nav className="h-full">
         <ul className="flex gap-x-4 h-full">
           {routes.map((route) => (

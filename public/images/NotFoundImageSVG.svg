@@ -1,0 +1,19 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+	<title>NotFoundImage</title>
+	<defs>
+		<image  width="200" height="200" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIAQMAAACXljzdAAAAAXNSR0IB2cksfwAAAANQTFRFAAAAp3o92gAAACdJREFUeJztyaEBAAAMAqD5/9PLBj+ASm6JMcYYY4wxxhhjjDHGlAcOMADJ5po/MQAAAABJRU5ErkJggg=="/>
+		<image  width="200" height="200" id="img2" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIBAMAAABfdrOtAAAAAXNSR0IB2cksfwAAADBQTFRFJCQkAAAAvr6+2dnZ8vLy////sbGxdHR0oqKik5OThISEY2NjUFBQPDw8zMzM5ubmCXxH/QAAA/9JREFUeJzt3E9IFFEcB/AZyf0zO9kKUh2CIrwldCnqkkxCQp0K3P5cQrCgLChhyYzCkegP/QEVyo5DeKiMsChRtDLolkKBxwIhkIhAkTIscMrdtn2zM/Pm/fvtP9/3sjvO+D7Om9mZ92dWVY0rmagbp5dftsXHlGxq6sYzqxOPFNIkdRNZUquz76N9zcsvz7tRJLyYeRe7fYIY0b+jSyiSWTMXVzwT+0GMOIMitspYCA3imdCvPCDRn7k/GdwvHKGPnjThkMwh1ZsseMQdgOpaqYjfJ18E8r9sQATg4lLwY5IfRFTNYZH0DcZ5AxKOpMN8r6JB+CORAiGYkxBiT7SDFrJkNTMj2oL/OvtpTlODFaFqKZXYgcchHwyCraITW7iQ9n0EDUJ7tFHhuCiX0TEJRvhvXRgk8iXdWplf4m21YJDEQPp1QeM0cMi4wVs4ASIuAi/1x7rhEUzKEXl4SER54ZMeRyaLdHWKQFZ/WotDACMReKT7LDxSVTEHjyw9oxwnKt5jIpGSRBzjMiW9JxJZ4Uiq1Y4gfzvc4vPqvuVA+IecPJLqiqPV1XoXQFFykMiwAY+ARSISyRdyj3zilRnptzZY0EioXqnz7SaLQt6aypi46R8fJPk+NKSd2ZwQzqCIdqtV4ESWDwKWokK4arGo9oQfCe8dhEcU08RuxDtQCFNdOaO8MEjlqMGEPDhMgWQf26FC7D0XDQpFcXyySJFQ/WP2jyNxdZ27wWyU2ydeIhIpGcTVjS4AAtDLXr56OxHXlOJimBe59NkKqi7+SZXhiFH0Z1fwAQyPGLxIcMIdZhppswCV17vTCNGTBdQz2dqVNmSJsLpm6WpV3/lxmh6hTEWDo4crDDl1B1mITNWi60Qh+vFO/yaTsD3p2WrAI7jzL4XwP7qHTwrRhgy+UipvYicFxVRXRRV2UtCBMHdx7TcGMQIyxp2L0D/MzoBARSISkUhpI9F2Ex6hGwITXV3qGo87i2hkVeMQPKL3e9wuivnswsbV+IFA3m13IxDzDC4E7Ht5KCIoA4k8II6+AxSCiUQkkkckOr3Ob9vMM/D8SHJq2G9b5m/n5iJ276zJWBQ5AhKJ0CRa6D3RD7QY4Ehs/S5LENLl+3xHZJLrK00o8rLJb9XIDsAvF2ci7uk4DMLYHvNoYYk/hZ+cnhGD9FY1+66br/3qQlSWSjna4ESi1dm/XptxlchbXf9Gry5cxW1U6MuKRCTCntTgeVnsSZ6RgKF2MQgmHiPr/l3yycvez4kFIHpLDwXS9G2cBaFLzcQmZiT2wiBD+o5435wQ5HclWVH+8ZtXRZDz18mKom9gIEjHNdpfZkCg5oFQxPXvDEoWAYxEJBIQeyJ3TJk4fwDJc88awSiOEQAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		tspan { white-space:pre } 
+		.t0 { font-size: 24px;fill: #ffe81f;font-weight: 400;font-family: "DejaVuSans", "DejaVu Sans" } 
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+	<use id="Stars" href="#img2" x="0" y="0"/>
+	<text id="Image  Not Found" style="transform: matrix(1,0,0,1,100,93.852)" >
+		<tspan x="-41.4" y="0" class="t0">I</tspan><tspan  y="0" class="t0">m</tspan><tspan  y="0" class="t0">a</tspan><tspan  y="0" class="t0">g</tspan><tspan  y="0" class="t0">e</tspan><tspan  y="0" class="t0"> </tspan><tspan  y="0" class="t0">
+</tspan>
+		<tspan x="-61.5" y="28.8" class="t0">N</tspan><tspan  y="28.8" class="t0">o</tspan><tspan  y="28.8" class="t0">t</tspan><tspan  y="28.8" class="t0"> </tspan><tspan  y="28.8" class="t0">F</tspan><tspan  y="28.8" class="t0">o</tspan><tspan  y="28.8" class="t0">u</tspan><tspan  y="28.8" class="t0">n</tspan><tspan  y="28.8" class="t0">d
+</tspan>
+	</text>
+</svg>

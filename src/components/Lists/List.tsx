@@ -4,6 +4,7 @@ import {
   getCharacterById,
   getFilmById,
   getIdFromUrl,
+  getPlanetById,
   getSpecieById,
   getStarshipById,
   getVehicleById,
@@ -13,7 +14,13 @@ import Link from "next/link"
 
 type ListProps = {
   urlList: string[]
-  category: "films" | "species" | "starships" | "vehicles" | "people"
+  category:
+    | "films"
+    | "species"
+    | "starships"
+    | "vehicles"
+    | "people"
+    | "planets"
   hasTitle?: boolean
 }
 
@@ -37,6 +44,8 @@ export default async function List({
           return getVehicleById(getIdFromUrl(url))
         case "people":
           return getCharacterById(getIdFromUrl(url))
+        case "planets":
+          return getPlanetById(getIdFromUrl(url))
       }
     })
   ).then((list) => list.map((item) => item.name))

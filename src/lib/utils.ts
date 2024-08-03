@@ -1,6 +1,6 @@
 import clsx, { ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
-import { Character, Film, Specie, Starship, Vehicle } from "./types"
+import { Character, Film, Planet, Specie, Starship, Vehicle } from "./types"
 /**
  * get id inside the url property
  * @param url
@@ -72,4 +72,11 @@ export async function getCharacterById(id: string): Promise<Character> {
   const character = await response.json()
 
   return character
+}
+
+export async function getPlanetById(id: string): Promise<Planet> {
+  const response = await fetch(`https://swapi.dev/api/planets/${id}`)
+  const planet = await response.json()
+
+  return planet
 }

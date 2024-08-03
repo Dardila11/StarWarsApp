@@ -9,6 +9,7 @@ import {
   getVehicleById,
 } from "@/lib/utils"
 import Image from "next/image"
+import Link from "next/link"
 
 type ListProps = {
   urlList: string[]
@@ -72,14 +73,16 @@ function Card({
     newCat = "characters"
   }
   return (
-    <div className="flex flex-col p-5 w-[250px] items-center">
-      <Image
-        src={`${SWAPI_IMAGE_URL}/${newCat}/${id}.jpg`}
-        alt={name}
-        width={200}
-        height={200}
-      />
-      <p>{name}</p>
-    </div>
+    <Link href={`/${category}/${id}`}>
+      <div className="flex flex-col p-5 w-[250px] items-center">
+        <Image
+          src={`${SWAPI_IMAGE_URL}/${newCat}/${id}.jpg`}
+          alt={name}
+          width={200}
+          height={200}
+        />
+        <p>{name}</p>
+      </div>
+    </Link>
   )
 }

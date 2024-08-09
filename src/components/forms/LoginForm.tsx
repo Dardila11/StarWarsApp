@@ -15,6 +15,7 @@ import { loginUserAction } from "@/app/data/actions/auth-actions"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useFormState } from "react-dom"
+import { ZodErrors } from "../errors/ZodErrors"
 
 const INITIAL_STATE = {
   data: null,
@@ -43,6 +44,7 @@ export default function SigninForm() {
                 type="text"
                 placeholder="username or email"
               />
+              <ZodErrors error={formState?.zodErrors?.username} />
             </div>
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
@@ -52,6 +54,7 @@ export default function SigninForm() {
                 type="password"
                 placeholder="password"
               />
+              <ZodErrors error={formState?.zodErrors?.password} />
             </div>
           </CardContent>
           <CardFooter className="flex flex-col">

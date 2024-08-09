@@ -32,7 +32,7 @@ export default function SigninForm() {
           <CardHeader className="space-y-1">
             <CardTitle className="text-3xl font-bold">Login</CardTitle>
             <CardDescription>
-              Enter your details to loginUserAction to your account
+              Enter your details to Login into your account
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">

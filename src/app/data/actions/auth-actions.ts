@@ -1,8 +1,9 @@
 "use server"
 import { z } from "zod"
+import { registerUserService } from "../services/auth-service"
 
 const schemaLogin = z.object({
-  username: z.string().email({
+  email: z.string().email({
     message: "Username must be a valid email address",
   }),
   password: z.string().min(8).max(50, {
@@ -14,7 +15,7 @@ export async function loginUserAction(prevState: any, formData: FormData) {
   console.log("Hello From Login User Action")
 
   const validatedFields = schemaLogin.safeParse({
-    username: formData.get("username"),
+    email: formData.get("username"),
     password: formData.get("password"),
   })
 
@@ -33,8 +34,9 @@ export async function loginUserAction(prevState: any, formData: FormData) {
 
 export async function registerUserAction(prevState: any, formData: FormData) {
   console.log("Hello From Register User Action")
+
   const validatedFields = schemaLogin.safeParse({
-    username: formData.get("username"),
+    email: formData.get("email"),
     password: formData.get("password"),
   })
 
@@ -46,8 +48,21 @@ export async function registerUserAction(prevState: any, formData: FormData) {
     }
   }
 
-  return {
-    ...prevState,
-    data: "ok",
+  const responseData = await registerUserService(validatedFields.data)
+
+  if (!responseData) {
+    return {
+      ...prevState,
+      message: "Something went wrong. Please try again",
+    }
   }
+
+  if (responseData.error) {
+    return {
+      ...prevState,
+      message: "Failed to register user. Please try again",
+    }
+  }
+
+  console.log("User Registered Successfully", responseData)
 }

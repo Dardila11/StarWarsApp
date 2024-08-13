@@ -51,7 +51,7 @@ export default function RegisterForm() {
             </div>
           </CardContent>
           <CardFooter className="flex flex-col">
-            <Link href="/login">Register</Link>
+            <button className="w-full">Register</button>
           </CardFooter>
         </Card>
         <div className="mt-4 text-center text-sm">

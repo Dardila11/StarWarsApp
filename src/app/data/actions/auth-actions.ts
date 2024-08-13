@@ -30,3 +30,24 @@ export async function loginUserAction(prevState: any, formData: FormData) {
     data: "ok",
   }
 }
+
+export async function registerUserAction(prevState: any, formData: FormData) {
+  console.log("Hello From Register User Action")
+  const validatedFields = schemaLogin.safeParse({
+    username: formData.get("username"),
+    password: formData.get("password"),
+  })
+
+  if (!validatedFields.success) {
+    return {
+      ...prevState,
+      zodErrors: validatedFields.error.flatten().fieldErrors,
+      message: "Missing Fields. Please check the form",
+    }
+  }
+
+  return {
+    ...prevState,
+    data: "ok",
+  }
+}

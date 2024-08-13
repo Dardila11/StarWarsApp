@@ -11,40 +11,34 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-import { loginUserAction } from "@/app/data/actions/auth-actions"
+import { registerUserAction } from "@/app/data/actions/auth-actions"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useFormState } from "react-dom"
-import { ZodErrors } from "../errors/ZodErrors"
 
 const INITIAL_STATE = {
   data: null,
 }
 
-export default function SigninForm() {
-  const [formState, formAction] = useFormState(loginUserAction, INITIAL_STATE)
-
-  console.log(formState)
+export default function RegisterForm() {
+  const [formState, formAction] = useFormState(
+    registerUserAction,
+    INITIAL_STATE
+  )
   return (
     <div className="w-full max-w-md">
       <form action={formAction}>
         <Card>
           <CardHeader className="space-y-1">
-            <CardTitle className="text-3xl font-bold">Login</CardTitle>
+            <CardTitle className="text-3xl font-bold">Register</CardTitle>
             <CardDescription>
-              Enter your details to Login into your account
+              Enter your details to create a new account
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
-              <Input
-                id="identifier"
-                name="username"
-                type="text"
-                placeholder="username or email"
-              />
-              <ZodErrors error={formState?.zodErrors?.username} />
+              <Input id="email" name="email" type="email" placeholder="email" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
@@ -54,17 +48,16 @@ export default function SigninForm() {
                 type="password"
                 placeholder="password"
               />
-              <ZodErrors error={formState?.zodErrors?.password} />
             </div>
           </CardContent>
           <CardFooter className="flex flex-col">
-            <button className="w-full">Login</button>
+            <Link href="/login">Register</Link>
           </CardFooter>
         </Card>
         <div className="mt-4 text-center text-sm">
-          Don&apos;t have an account?
-          <Link className="underline ml-2" href="/register">
-            Register
+          Have an account?
+          <Link className="underline ml-2" href="/login">
+            Login
           </Link>
         </div>
       </form>

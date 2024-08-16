@@ -1,6 +1,16 @@
 "use server"
+import { cookies } from "next/headers"
+import { redirect } from "next/navigation"
 import { z } from "zod"
 import { registerUserService } from "../services/auth-service"
+
+const config = {
+  maxAge: 60 * 60 * 24 * 7,
+  path: "/",
+  httpOnly: true,
+  domain: "localhost",
+  secure: process.env.NODE_ENV === "production",
+}
 
 const schemaLogin = z.object({
   email: z.string().email({
@@ -65,4 +75,6 @@ export async function registerUserAction(prevState: any, formData: FormData) {
   }
 
   console.log("User Registered Successfully", responseData)
+  cookies().set("jwtToken", responseData.accessToken, config)
+  redirect("/favorites")
 }

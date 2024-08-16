@@ -1,11 +1,6 @@
 import LoginForm from "@/components/forms/LoginForm"
 
-type Props = {
-  email: string
-  password: string
-}
-
-export default function LoginPage({}: Props) {
+export default function LoginPage() {
   return (
     <main>
       <LoginForm />

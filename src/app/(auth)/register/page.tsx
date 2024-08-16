@@ -1,8 +1,6 @@
 import RegisterForm from "@/components/forms/RegisterForm"
 
-type RegisterPageProps = {}
-
-export default function RegisterPage({}: RegisterPageProps) {
+export default function RegisterPage() {
   return (
     <main>
       <RegisterForm />

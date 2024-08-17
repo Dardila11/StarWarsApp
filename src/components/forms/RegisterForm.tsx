@@ -11,13 +11,61 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-import { registerUserActionAmplify } from "@/app/data/actions/auth-actions"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { signUp } from "aws-amplify/auth"
 import { useFormState } from "react-dom"
+import { z } from "zod"
+
+const schemaLogin = z.object({
+  email: z.string().email({
+    message: "Username must be a valid email address",
+  }),
+  password: z.string().min(8).max(50, {
+    message: "Password must be between 8 and 50 characters",
+  }),
+})
 
 const INITIAL_STATE = {
   data: null,
+}
+
+export async function registerUserAmplifyService(
+  email: string,
+  password: string
+) {
+  try {
+    await signUp({
+      username: email,
+      password: password,
+    })
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export async function registerUserActionAmplify(
+  prevState: any,
+  formData: FormData
+) {
+  console.log("Hello From Register User Action")
+  let email = formData.get("email")!.toString()
+  let password = formData.get("password")!.toString()
+
+  const validatedFields = schemaLogin.safeParse({
+    email: formData.get("email"),
+    password: formData.get("password"),
+  })
+
+  if (!validatedFields.success) {
+    return {
+      ...prevState,
+      zodErrors: validatedFields.error.flatten().fieldErrors,
+      message: "Missing Fields. Please check the form",
+    }
+  }
+
+  const responseData = await registerUserAmplifyService(email, password)
 }
 
 export default function RegisterForm() {
@@ -25,6 +73,7 @@ export default function RegisterForm() {
     registerUserActionAmplify,
     INITIAL_STATE
   )
+
   return (
     <div className="w-full max-w-md">
       <form action={formAction}>

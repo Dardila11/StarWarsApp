@@ -5,6 +5,8 @@ import { Amplify } from "aws-amplify"
 
 Amplify.configure(outputs, { ssr: true })
 
+console.log(Amplify.getConfig())
+
 export default function ConfigureAmplifyClientSide() {
   return null
 }

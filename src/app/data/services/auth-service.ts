@@ -1,5 +1,4 @@
 import { signUp } from "aws-amplify/auth"
-
 type RegisterUserProps = {
   email: string
   password: string

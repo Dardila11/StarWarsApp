@@ -11,7 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-import { registerUserAction } from "@/app/data/actions/auth-actions"
+import { registerUserActionAmplify } from "@/app/data/actions/auth-actions"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useFormState } from "react-dom"
@@ -22,7 +22,7 @@ const INITIAL_STATE = {
 
 export default function RegisterForm() {
   const [formState, formAction] = useFormState(
-    registerUserAction,
+    registerUserActionAmplify,
     INITIAL_STATE
   )
   return (

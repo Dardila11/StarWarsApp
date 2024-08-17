@@ -2,7 +2,10 @@
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
 import { z } from "zod"
-import { registerUserService } from "../services/auth-service"
+import {
+  registerUserAmplifyService,
+  registerUserService,
+} from "../services/auth-service"
 
 const config = {
   maxAge: 60 * 60 * 24 * 7,
@@ -40,6 +43,28 @@ export async function loginUserAction(prevState: any, formData: FormData) {
     ...prevState,
     data: "ok",
   }
+}
+
+export async function registerUserActionAmplify(
+  prevState: any,
+  formData: FormData
+) {
+  console.log("Hello From Register User Action")
+
+  const validatedFields = schemaLogin.safeParse({
+    email: formData.get("email"),
+    password: formData.get("password"),
+  })
+
+  if (!validatedFields.success) {
+    return {
+      ...prevState,
+      zodErrors: validatedFields.error.flatten().fieldErrors,
+      message: "Missing Fields. Please check the form",
+    }
+  }
+
+  const responseData = await registerUserAmplifyService(validatedFields.data)
 }
 
 export async function registerUserAction(prevState: any, formData: FormData) {

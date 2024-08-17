@@ -1,6 +1,19 @@
+import { signUp } from "aws-amplify/auth"
+
 type RegisterUserProps = {
   email: string
   password: string
+}
+
+export async function registerUserAmplifyService(userData: RegisterUserProps) {
+  try {
+    await signUp({
+      username: userData.email,
+      password: userData.password,
+    })
+  } catch (error) {
+    console.error(error)
+  }
 }
 
 export async function registerUserService(userData: RegisterUserProps) {

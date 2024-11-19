@@ -3,6 +3,7 @@ import Link from "next/link"
 const routes = [
   { name: "Home", path: "/" },
   { name: "Favorites", path: "/favorites" },
+  { name: "Login", path: "/login" },
 ]
 
 export default function Header() {

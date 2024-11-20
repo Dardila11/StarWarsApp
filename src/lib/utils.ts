@@ -1,6 +1,7 @@
-import clsx, { ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
-import { Character, Film, Planet, Specie, Starship, Vehicle } from "./types"
+import clsx, {ClassValue} from "clsx"
+import {twMerge} from "tailwind-merge"
+import {Character, Film, Planet, Specie, Starship, Vehicle} from "./types"
+
 /**
  * get id inside the url property
  * @param url
@@ -33,9 +34,7 @@ export function getAllIdsFromArray(array: string[]): string[] {
 */
 export async function getStarshipById(id: string): Promise<Starship> {
   const response = await fetch(`https://swapi.dev/api/starships/${id}`)
-  const starship: Starship = await response.json()
-
-  return starship
+  return await response.json()
 }
 
 /*
@@ -44,9 +43,7 @@ export async function getStarshipById(id: string): Promise<Starship> {
 */
 export async function getSpecieById(id: string): Promise<Specie> {
   const response = await fetch(`https://swapi.dev/api/species/${id}`)
-  const specie: Specie = await response.json()
-
-  return specie
+  return await response.json()
 }
 
 /*
@@ -55,28 +52,20 @@ export async function getSpecieById(id: string): Promise<Specie> {
 */
 export async function getVehicleById(id: string): Promise<Vehicle> {
   const response = await fetch(`https://swapi.dev/api/vehicles/${id}`)
-  const vehicle: Vehicle = await response.json()
-
-  return vehicle
+  return await response.json()
 }
 
 export async function getFilmById(id: string): Promise<Film> {
   const response = await fetch(`https://swapi.dev/api/films/${id}`)
-  const film = await response.json()
-
-  return film
+  return await response.json()
 }
 
 export async function getCharacterById(id: string): Promise<Character> {
   const response = await fetch(`https://swapi.dev/api/people/${id}`)
-  const character = await response.json()
-
-  return character
+  return await response.json()
 }
 
 export async function getPlanetById(id: string): Promise<Planet> {
   const response = await fetch(`https://swapi.dev/api/planets/${id}`)
-  const planet = await response.json()
-
-  return planet
+  return await response.json()
 }
